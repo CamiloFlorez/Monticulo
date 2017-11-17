@@ -2,18 +2,18 @@
 #include <stdlib.h>
 #include <math.h>
 
-int Left(int i);
-int Right(int i);
+int Left(int i);//funcion para determinar hijo izquierdo 
+int Right(int i);//funcion para determinar hijo derecho
 
 //EN ESTA SECCIÖN DE CONSTRUYE LA CLASE
 class Monticulo{
-      private:
-              int *pA;
-			  int LHeap, i;
+      private://atributos privados para que no puedan ser modificados por el usuario
+              int *pA;  //puntero donde arranca mi vector
+			  int LHeap, i;//longitud del vector y nodo
               
       public:
-             Monticulo(int &_pA,int _LHeap);
-             void Max_Heapify(int &_pA,int _LHeap,int _i);
+             Monticulo(int &_pA,int _LHeap); //clase 
+             void Max_Heapify(int &_pA,int _LHeap,int _i);//métodos
              void Build_Heap(int &_pA,int _LHeap);
              void Heapsort(int &_pA, int _LHeap);
             };
@@ -26,9 +26,8 @@ Monticulo::Monticulo(int &_pA,int _LHeap){
                        //i=_i;
                                 };
                        
-//SE PROCEDE A DEFINIR LOS MÉTODOS INCLUIDOS EN LA CLASE LCS:
+//SE PROCEDE A DEFINIR LOS MÉTODOS INCLUIDOS EN LA CLASE MONTÍCULO:
 
-//METODO L
 
 void Monticulo::Max_Heapify(int &_pA,int _LHeap,int _i){
 	
@@ -97,7 +96,7 @@ void Monticulo::Heapsort(int &_pA,int _LHeap){
 
 
 int main(){
-	
+//DECLARACIÓN DE LAS VARIABLES GLOBALES	
 	
 	int i;
   	int LHeap;
@@ -122,9 +121,9 @@ int main(){
 	  	  
 	  pA=&A[0];
 	  
-	  Monticulo R=Monticulo(*pA,LHeap);
+	  Monticulo R=Monticulo(*pA,LHeap);//AQUÍ SE CREA EL OBJETO R DE LA CLASE MONTICULO
 	  
-	  R.Heapsort(*pA,LHeap);
+	  R.Heapsort(*pA,LHeap);//AQUÍ SE APLICA EL MÉTODO Heapsort AL OBJETO R
 	
 	printf ("El Monticulo es igual a \n");
    	
